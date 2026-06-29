@@ -1,86 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ViralScreen - Movies, TV Shows & People</title>
-
 <meta name="description" content="Watch trending movies, TV Shows and discover popular people powered by TMDB.">
-
-<meta name="keywords" content="movie,tv,film,trending,tmdb,trailer">
-
+<meta name="keywords" content="movies,tv shows,trending,tmdb,trailer,actor,film">
+<meta name="author" content="ViralScreen">
 <meta name="robots" content="index,follow">
-
 <meta name="theme-color" content="#020617">
-
 <link rel="icon" href="favicon.png">
-
 <link
 href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
 rel="stylesheet">
-
 <link rel="stylesheet" href="style.css">
-
 </head>
-
 <body>
-
-<!-- ==========================
-NAVBAR
-========================== -->
-
 <header class="navbar">
-
-<div class="logo">
+<div class="logo" onclick="goHome()">
 🎬 <span>ViralScreen</span>
 </div>
-
-<div class="nav-links">
-
+<nav class="nav-links">
 <a onclick="goHome()">Home</a>
-
 <a onclick="loadMovies()">Movies</a>
-
 <a onclick="loadTV()">TV Shows</a>
-
 <a onclick="loadPeople()">People</a>
-
-</div>
-
+</nav>
+<button
+class="menu-btn"
+onclick="toggleMenu()">
+</button>
 </header>
-
-
-
-<!-- ==========================
-HERO
-========================== -->
-
 <section
 id="hero"
 class="hero">
-
 <div class="hero-content">
-
-<h1 id="heroTitle" class="hero-title">
+<h1
+id="heroTitle"
+class="hero-title">
 Loading...
 </h1>
-
 <p
 id="heroOverview"
 class="hero-overview">
 Loading...
 </p>
-
 <div class="hero-meta">
-
 <span id="heroRating">
-⭐ 0
+⭐ 0.0
 </span>
-
 <span id="heroYear">
+
 2026
+
 </span>
 
 </div>
@@ -108,6 +80,7 @@ More Info
 <div
 id="heroDots"
 class="hero-dots">
+
 </div>
 
 </div>
@@ -127,9 +100,10 @@ SEARCH
 <input
 id="searchInput"
 type="text"
-placeholder="Search movies, TV shows or people...">
+placeholder="Search movies, TV Shows or People...">
 
-<button onclick="searchMovie()">
+<button
+onclick="searchMovie()">
 
 🔍
 
@@ -142,10 +116,10 @@ placeholder="Search movies, TV shows or people...">
 
 
 <!-- ==========================
-HOME CONTENT
+MAIN CONTENT
 ========================== -->
 
-<div
+<main
 id="app"
 class="container">
 
@@ -164,6 +138,12 @@ class="container">
 <div
 id="trendingRow"
 class="row">
+
+<div class="loading">
+
+Loading...
+
+</div>
 
 </div>
 
@@ -187,6 +167,12 @@ class="row">
 id="popularRow"
 class="row">
 
+<div class="loading">
+
+Loading...
+
+</div>
+
 </div>
 
 </section>
@@ -199,7 +185,7 @@ class="row">
 
 <h2 class="section-title">
 
-📺 Top Rated TV
+📺 Top Rated TV Shows
 
 </h2>
 
@@ -208,6 +194,12 @@ class="row">
 <div
 id="tvRow"
 class="row">
+
+<div class="loading">
+
+Loading...
+
+</div>
 
 </div>
 
@@ -231,11 +223,17 @@ class="row">
 id="peopleRow"
 class="row">
 
+<div class="loading">
+
+Loading...
+
+</div>
+
 </div>
 
 </section>
 
-</div>
+</main>
 
 
 
@@ -248,16 +246,17 @@ id="toast"
 style="
 display:none;
 position:fixed;
-bottom:30px;
 left:50%;
+bottom:30px;
 transform:translateX(-50%);
 background:#0f172a;
 padding:12px 22px;
 border-radius:12px;
-z-index:99999;
 color:#fff;
-box-shadow:0 8px 30px rgba(0,0,0,.4);
+z-index:999999;
+box-shadow:0 10px 30px rgba(0,0,0,.45);
 ">
+
 </div>
 
 
@@ -277,7 +276,12 @@ onclick="scrollTopSmooth()">
 
 
 
+<!-- ==========================
+JAVASCRIPT
+========================== -->
+
 <script src="app.js"></script>
 
 </body>
+
 </html>
