@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>ViralScreen - Movies, TV Shows & People</title>
+
 <meta name="description" content="Watch trending movies, TV shows and discover popular people powered by TMDB.">
 <meta name="keywords" content="movies,tv shows,trending,tmdb,trailer,actor,film">
 <meta name="author" content="ViralScreen">
@@ -12,8 +14,32 @@
 <link rel="icon" href="favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
+
+<div class="hero-buttons">
+<button
+class="btn btn-primary"
+onclick="playHeroTrailer()">
+▶ Watch Trailer
+</button>
+<button
+class="btn btn-secondary"
+onclick="heroMoreInfo()">
+More Info
+</button>
+</div>
+<div id="heroDots" class="hero-dots"></div>
+
+
+<button
+id="scrollTop"
+class="scroll-top"
+onclick="scrollTopSmooth()">
+</button>
+
+
 <script src="app.js"></script>
 </body>
 </html>
